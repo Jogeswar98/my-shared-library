@@ -1,3 +1,9 @@
-def call(Map config) {
-    git branch: config.branch, url: config.url
+
+// Checkout Github Public Repository
+def call(Map config = [:]) {
+          checkout scm: [
+              $class: 'GitSCM',
+              branches: [[name: config.branch]],
+              userRemoteConfigs: [[url: config.url]]
+          ]
 }
