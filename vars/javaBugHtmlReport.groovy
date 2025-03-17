@@ -1,4 +1,11 @@
+
 def call() {
-    echo "Publishing Java Bug HTML Report..."
-    // Add your HTML report generation logic here
+          publishHTML(target: [
+              allowMissing: false,
+              alwaysLinkToLastBuild: true,
+              keepAll: true,
+              reportDir: 'target/site',
+              reportFiles: 'spotbugs.html',
+              reportName: 'SpotBugs Report'
+          ])
 }
