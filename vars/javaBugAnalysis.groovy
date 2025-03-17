@@ -1,4 +1,5 @@
 def call() {
-    echo "Running Java Bug Analysis..."
-    // Add your bug analysis logic here
+          sh 'mvn compile'
+          sh 'mvn spotbugs:spotbugs'
+          sh 'mvn site'
 }
